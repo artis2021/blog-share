@@ -80,7 +80,7 @@ function All() {
   const [posts,setPosts] = useState([]);
   useEffect(()=>{
     const fetchPosts = async ()=>{
-      const res = await axios.get(`http://localhost:8080/api/posts/`)
+      const res = await axios.get(`https://important-flip-flops-fawn.cyclic.cloud/api/posts/`)
       setPosts(res.data);
     }
     fetchPosts();

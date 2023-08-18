@@ -227,7 +227,7 @@ function New() {
     e.preventDefault();
     const array = tags.split(',');
     toggleProcess()
-    const res = await axios.post('http://localhost:8080/api/posts/',{title,description:des,code,author,tags:array,email})
+    const res = await axios.post('https://important-flip-flops-fawn.cyclic.cloud/api/posts/',{title,description:des,code,author,tags:array,email})
     toggleProcess()
     navigate(`/post/${res.data._id}`);
   }
@@ -240,7 +240,7 @@ function New() {
         }
       }
       try{
-        const res = await axios.get("http://localhost:8080/api/private",config);
+        const res = await axios.get("https://important-flip-flops-fawn.cyclic.cloud/api/private",config);
         setEmail(res.data.user.email||"");
       }catch(e){
         localStorage.removeItem("authToken");

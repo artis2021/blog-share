@@ -191,7 +191,7 @@ function Profile() {
         }
       }
       try{
-        const res = await axios.get("http://localhost:8080/api/private",config);
+        const res = await axios.get("https://important-flip-flops-fawn.cyclic.cloud/api/private",config);
         setUser(res.data.user);
 
       }catch(e){
@@ -202,7 +202,7 @@ function Profile() {
         },5000)
       }
       const fetchPosts = async ()=>{
-        const res = await axios.get(`http://localhost:8080/api/posts/mail/${user.email}`)
+        const res = await axios.get(`https://important-flip-flops-fawn.cyclic.cloud/api/posts/mail/${user.email}`)
         setPosts(res.data);
       }
       fetchPosts();
@@ -215,7 +215,7 @@ function Profile() {
     const ans = prompt("This action is irreversible. Do you want to proceed? (Y/N)","Y");
     if(ans==="Y" || ans==="y"){
       try{
-          await axios.delete(`http://localhost:8080/api/posts/${id}/${user?.email}`);
+          await axios.delete(`https://important-flip-flops-fawn.cyclic.cloud/api/posts/${id}/${user?.email}`);
       }catch(err){
         setError(err.response.data.error);
         setTimeout(()=>{
